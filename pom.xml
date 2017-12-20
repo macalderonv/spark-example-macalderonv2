@@ -4,7 +4,7 @@
 
   <groupId>urjc.isi</groupId>
   <artifactId>pruebasMockito</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>pruebasMockito</name>
@@ -78,7 +78,7 @@
           <appName>spark-example-macalderonv</appName>
           <processTypes>
             <!-- Tell Heroku how to launch your application -->
-            <web>java -jar ./target/pruebasMockito-0.0.1-jar-with-dependencies.jar</web>
+            <web>java -jar ./target/pruebasMockito-0.0.1-SNAPHOT-jar-with-dependencies.jar</web>
           </processTypes>
         </configuration>
       </plugin>
