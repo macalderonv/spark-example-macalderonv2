@@ -47,8 +47,8 @@ public class MockitoTests {
 	@Test
 	public void MockListGetWithAny() {
 		List<String> list = mock(List.class);
-		when(list.get(anyInt())).thenReturn("Hello World");
-		when(list.get(3)).thenReturn("Bye World");
+		when(list.get(anyInt())).thenReturn("Hello World"); //para cualquier entero 
+		when(list.get(3)).thenReturn("Bye World"); //para este entero especificamente 
 		
 		assertEquals("Hello World", list.get(0));
 		assertEquals("Hello World", list.get(1));
@@ -60,7 +60,7 @@ public class MockitoTests {
 	
 	@Test
 	public void MockIterator_will_return_hello_world(){
-		Iterator i = mock(Iterator.class);
+		Iterator i = mock(Iterator.class); 
 		when(i.next()).thenReturn("Hello").thenReturn("World");
 
 		String result=i.next()+" "+i.next();
@@ -85,12 +85,12 @@ public class MockitoTests {
 		when(c.compareTo(3)).thenReturn(0);
 		assertEquals(-1, c.compareTo(5));
 		assertEquals(0, c.compareTo(3));
-		verify(c).compareTo(5);
+		verify(c).compareTo(5); //comprobar que se ha llamado al compareTo(5)
 		verify(c).compareTo(3);
 		verify(c, never()).compareTo(25);
-		verify(c, times(1)).compareTo(5);
-		verify(c, atLeastOnce()).compareTo(5);
-		verify(c, atLeast(1)).compareTo(5);
+		verify(c, times(1)).compareTo(5);//se le llama exactamente una vez
+		verify(c, atLeastOnce()).compareTo(5); //al meno una vez 
+		verify(c, atLeast(1)).compareTo(5); //al menos n veces, donde el n=1 en este ejemplo 
 	}
 
 
